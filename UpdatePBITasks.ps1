@@ -1,9 +1,9 @@
 ﻿############################################################################################
 # Name: QueryActPendingTasks.ps1
-# Purpose: This Script performs below functions:
+# Purpose: This Script uses Windows PowerShell to performs below functions:
 # 1. Lookup Migration Product Backlog Items (PBIs) based on User selected or from the list provided.
 # 2. Update the Closure date as provided.
-# Created by: v-asiddiqui (Ajaz Ahmed Siddiqui)
+# Created by: Ajaz Ahmed Siddiqui
 # Date: 9/13/2021
 ############################################################################################
 
@@ -84,7 +84,7 @@ function UpdateWorkItem($Item, $finishdate)
 
     $Choice=Read-Host "Do you want to use your own set of PBIs (Y/N)?"
     If ($Choice -eq 'Y' -OR $Choice -eq 'Yes'){
-        Write-Host "Ensure you have a text file with all ticket numbers as PBIs.txt"
+        Write-Host "Ensure you have a text file with all ticket numbers as PBIs.csv"
         try{
         $AllPBIs = Import-csv "PBIs.csv"
         }
